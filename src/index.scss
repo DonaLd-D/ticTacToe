@@ -9,9 +9,9 @@ ol, ul {
 
 .game {
   display: flex;
-  flex-direction: row;
-}
-
-.game-info {
-  margin-left: 20px;
+  justify-content: center;
+  .game-info {
+    margin-left: 20px;
+    border: 1px solid #999;
+  }
 }
