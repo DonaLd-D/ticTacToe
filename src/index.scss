@@ -13,5 +13,9 @@ ol, ul {
   .game-info {
     margin-left: 20px;
     border: 1px solid #999;
+    background: #ddd;
+    li{
+      margin-right: 20px;
+    }
   }
 }

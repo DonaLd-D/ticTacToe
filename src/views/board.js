@@ -5,8 +5,8 @@ import './board.scss'
 import cal from '../utils/cal'
 
 class Board extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       squares:Array(9).fill(null),
       isX:true,
@@ -22,6 +22,7 @@ class Board extends React.Component {
     let isEnd=cal(squares)?true:false
     if(!this.state.isEnd){
       this.setState({squares:squares,isX:!this.state.isX,isEnd:isEnd})
+      this.props.toChild({index:i,value:squares[i]})
     }
   }
 
@@ -31,7 +32,7 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{winner?'Winner is: '+winner:status}</div>
+        <div className="status">{winner?'Winner is: '+winner:status}<span className="reset" onClick={()=>document.location.reload()}>reset</span></div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
