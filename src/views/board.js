@@ -32,7 +32,10 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{winner?'Winner is: '+winner:status}<span className="reset" onClick={()=>document.location.reload()}>reset</span></div>
+        <div className="status">
+          {winner?'Winner is: '+winner:status}
+          <span className="reset" onClick={()=>document.location.reload()}>reset</span>
+        </div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
